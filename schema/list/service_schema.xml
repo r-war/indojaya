@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<database 
+	name="database"
+	defaultIdMethod="native"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="xsd/database.xsd">
+	<table name="service">
+		<column
+			name="id"
+			required="true"
+			primaryKey="true"
+			autoIncrement="true"
+			type="INTEGER"
+			size="10"/>
+		<column
+			name="index"
+			required="false"
+			type="INTEGER"
+			size="10"/>
+		<column
+			name="name"
+			required="true"
+			type="VARCHAR"
+			size="255"/>
+		<column
+			name="short_description"
+			required="false"
+			type="LONGVARCHAR"/>
+		<column
+			name="description"
+			required="true"
+			type="LONGVARCHAR"/>
+		<column
+			name="picture"
+			required="false"
+			type="VARCHAR"
+			size="255"/>
+		<column
+			name="extra"
+			required="false"
+			type="LONGVARCHAR" />			
+		<validator column="name">
+			<rule
+				name="required"
+				message="required-name" />
+		</validator>
+	</table>
+</database>

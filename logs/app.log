@@ -1,0 +1,140 @@
+May 12 08:27:34 App [error] Unable to open PDO connection [wrapped: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+]
+#0 D:\HOIYEN\xampp\htdocs\cms\ketki\classes\propel\Propel.php(523): Propel::initConnection(Array, 'database')
+#1 D:\HOIYEN\xampp\htdocs\cms\ketki\classes\propel\Propel.php(538): Propel::getConnection('database', 'write')
+#2 D:\HOIYEN\xampp\htdocs\cms\ketki\classes\orm\om\BaseConfigurationPeer.php(264): Propel::getConnection('database', 'read')
+#3 D:\HOIYEN\xampp\htdocs\cms\ketki\classes\orm\om\BaseConfigurationPeer.php(246): BaseConfigurationPeer::doSelectStmt(Object(Criteria), NULL)
+#4 D:\HOIYEN\xampp\htdocs\cms\ketki\classes\orm\om\BaseConfigurationPeer.php(229): BaseConfigurationPeer::doSelect(Object(Criteria), NULL)
+#5 D:\HOIYEN\xampp\htdocs\cms\ketki\classes\orm\ConfigurationPeer.php(62): BaseConfigurationPeer::doSelectOne(Object(Criteria))
+#6 D:\HOIYEN\xampp\htdocs\cms\ketki\classes\core\Application.php(100): ConfigurationPeer::getValueByKey('template')
+#7 D:\HOIYEN\xampp\htdocs\cms\ketki\classes\core\Application.php(75): Application->handleBasePath()
+#8 D:\HOIYEN\xampp\htdocs\cms\ketki\index.php(9): Application->start()
+#9 {main}
+******************************************************
+Jun 09 08:48:26 App [error] Unable to open PDO connection [wrapped: SQLSTATE[HY000] [1049] Unknown database 'itc2_innergy']
+#0 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\propel\Propel.php(523): Propel::initConnection(Array, 'database')
+#1 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\propel\Propel.php(538): Propel::getConnection('database', 'write')
+#2 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\om\BaseConfigurationPeer.php(264): Propel::getConnection('database', 'read')
+#3 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\om\BaseConfigurationPeer.php(246): BaseConfigurationPeer::doSelectStmt(Object(Criteria), NULL)
+#4 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\ConfigurationPeer.php(26): BaseConfigurationPeer::doSelect(Object(Criteria))
+#5 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\core\Application.php(299): ConfigurationPeer::getAll()
+#6 D:\HOIYEN\xampp\htdocs\cms\innergy\index.php(10): Application->process()
+#7 {main}
+******************************************************
+Jun 09 08:48:27 App [error] Unable to open PDO connection [wrapped: SQLSTATE[HY000] [1049] Unknown database 'itc2_innergy']
+#0 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\propel\Propel.php(523): Propel::initConnection(Array, 'database')
+#1 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\propel\Propel.php(538): Propel::getConnection('database', 'write')
+#2 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\om\BaseConfigurationPeer.php(264): Propel::getConnection('database', 'read')
+#3 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\om\BaseConfigurationPeer.php(246): BaseConfigurationPeer::doSelectStmt(Object(Criteria), NULL)
+#4 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\ConfigurationPeer.php(26): BaseConfigurationPeer::doSelect(Object(Criteria))
+#5 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\core\Application.php(299): ConfigurationPeer::getAll()
+#6 D:\HOIYEN\xampp\htdocs\cms\innergy\index.php(10): Application->process()
+#7 {main}
+******************************************************
+Jun 09 08:48:43 App [error] Unable to open PDO connection [wrapped: SQLSTATE[HY000] [1049] Unknown database 'itc2_innergy']
+#0 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\propel\Propel.php(523): Propel::initConnection(Array, 'database')
+#1 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\propel\Propel.php(538): Propel::getConnection('database', 'write')
+#2 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\om\BaseConfigurationPeer.php(264): Propel::getConnection('database', 'read')
+#3 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\om\BaseConfigurationPeer.php(246): BaseConfigurationPeer::doSelectStmt(Object(Criteria), NULL)
+#4 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\ConfigurationPeer.php(26): BaseConfigurationPeer::doSelect(Object(Criteria))
+#5 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\core\Application.php(299): ConfigurationPeer::getAll()
+#6 D:\HOIYEN\xampp\htdocs\cms\innergy\index.php(9): Application->process()
+#7 {main}
+******************************************************
+Jun 09 08:49:00 App [error] Unable to open PDO connection [wrapped: SQLSTATE[HY000] [1049] Unknown database 'itc2_innergy']
+#0 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\propel\Propel.php(523): Propel::initConnection(Array, 'database')
+#1 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\propel\Propel.php(538): Propel::getConnection('database', 'write')
+#2 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\om\BaseConfigurationPeer.php(264): Propel::getConnection('database', 'read')
+#3 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\om\BaseConfigurationPeer.php(246): BaseConfigurationPeer::doSelectStmt(Object(Criteria), NULL)
+#4 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\om\BaseConfigurationPeer.php(229): BaseConfigurationPeer::doSelect(Object(Criteria), NULL)
+#5 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\ConfigurationPeer.php(62): BaseConfigurationPeer::doSelectOne(Object(Criteria))
+#6 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\core\Application.php(100): ConfigurationPeer::getValueByKey('template')
+#7 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\core\Application.php(75): Application->handleBasePath()
+#8 D:\HOIYEN\xampp\htdocs\cms\innergy\index.php(8): Application->start()
+#9 {main}
+******************************************************
+Jun 09 08:49:05 App [error] Unable to open PDO connection [wrapped: SQLSTATE[HY000] [1049] Unknown database 'itc2_innergy']
+#0 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\propel\Propel.php(523): Propel::initConnection(Array, 'database')
+#1 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\propel\Propel.php(538): Propel::getConnection('database', 'write')
+#2 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\om\BaseConfigurationPeer.php(264): Propel::getConnection('database', 'read')
+#3 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\om\BaseConfigurationPeer.php(246): BaseConfigurationPeer::doSelectStmt(Object(Criteria), NULL)
+#4 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\om\BaseConfigurationPeer.php(229): BaseConfigurationPeer::doSelect(Object(Criteria), NULL)
+#5 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\ConfigurationPeer.php(62): BaseConfigurationPeer::doSelectOne(Object(Criteria))
+#6 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\core\Application.php(100): ConfigurationPeer::getValueByKey('template')
+#7 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\core\Application.php(75): Application->handleBasePath()
+#8 D:\HOIYEN\xampp\htdocs\cms\innergy\index.php(8): Application->start()
+#9 {main}
+******************************************************
+Jun 09 08:49:39 App [error] Unable to open PDO connection [wrapped: SQLSTATE[HY000] [1049] Unknown database 'itc2_innergy']
+#0 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\propel\Propel.php(523): Propel::initConnection(Array, 'database')
+#1 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\propel\Propel.php(538): Propel::getConnection('database', 'write')
+#2 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\om\BaseConfigurationPeer.php(264): Propel::getConnection('database', 'read')
+#3 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\om\BaseConfigurationPeer.php(246): BaseConfigurationPeer::doSelectStmt(Object(Criteria), NULL)
+#4 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\om\BaseConfigurationPeer.php(229): BaseConfigurationPeer::doSelect(Object(Criteria), NULL)
+#5 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\orm\ConfigurationPeer.php(62): BaseConfigurationPeer::doSelectOne(Object(Criteria))
+#6 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\core\Application.php(100): ConfigurationPeer::getValueByKey('template')
+#7 D:\HOIYEN\xampp\htdocs\cms\innergy\classes\core\Application.php(75): Application->handleBasePath()
+#8 D:\HOIYEN\xampp\htdocs\cms\innergy\index.php(8): Application->start()
+#9 {main}
+******************************************************
+Oct 16 09:02:53 App [error] Unable to open PDO connection [wrapped: SQLSTATE[42000] [1044] Access denied for user 'innergy_user'@'localhost' to database 'innergy_cms']
+#0 /home/innergy/public_html/classes/propel/Propel.php(523): Propel::initConnection(Array, 'database')
+#1 /home/innergy/public_html/classes/propel/Propel.php(538): Propel::getConnection('database', 'write')
+#2 /home/innergy/public_html/classes/orm/om/BaseConfigurationPeer.php(264): Propel::getConnection('database', 'read')
+#3 /home/innergy/public_html/classes/orm/om/BaseConfigurationPeer.php(246): BaseConfigurationPeer::doSelectStmt(Object(Criteria), NULL)
+#4 /home/innergy/public_html/classes/orm/om/BaseConfigurationPeer.php(229): BaseConfigurationPeer::doSelect(Object(Criteria), NULL)
+#5 /home/innergy/public_html/classes/orm/ConfigurationPeer.php(62): BaseConfigurationPeer::doSelectOne(Object(Criteria))
+#6 /home/innergy/public_html/classes/core/Application.php(100): ConfigurationPeer::getValueByKey('template')
+#7 /home/innergy/public_html/classes/core/Application.php(75): Application->handleBasePath()
+#8 /home/innergy/public_html/index.php(9): Application->start()
+#9 {main}
+******************************************************
+Oct 16 09:03:12 App [error] Unable to open PDO connection [wrapped: SQLSTATE[42000] [1044] Access denied for user 'innergy_user'@'localhost' to database 'innergy_cms']
+#0 /home/innergy/public_html/classes/propel/Propel.php(523): Propel::initConnection(Array, 'database')
+#1 /home/innergy/public_html/classes/propel/Propel.php(538): Propel::getConnection('database', 'write')
+#2 /home/innergy/public_html/classes/orm/om/BaseConfigurationPeer.php(264): Propel::getConnection('database', 'read')
+#3 /home/innergy/public_html/classes/orm/om/BaseConfigurationPeer.php(246): BaseConfigurationPeer::doSelectStmt(Object(Criteria), NULL)
+#4 /home/innergy/public_html/classes/orm/om/BaseConfigurationPeer.php(229): BaseConfigurationPeer::doSelect(Object(Criteria), NULL)
+#5 /home/innergy/public_html/classes/orm/ConfigurationPeer.php(62): BaseConfigurationPeer::doSelectOne(Object(Criteria))
+#6 /home/innergy/public_html/classes/core/Application.php(100): ConfigurationPeer::getValueByKey('template')
+#7 /home/innergy/public_html/classes/core/Application.php(75): Application->handleBasePath()
+#8 /home/innergy/public_html/index.php(9): Application->start()
+#9 {main}
+******************************************************
+Oct 16 09:03:13 App [error] Unable to open PDO connection [wrapped: SQLSTATE[42000] [1044] Access denied for user 'innergy_user'@'localhost' to database 'innergy_cms']
+#0 /home/innergy/public_html/classes/propel/Propel.php(523): Propel::initConnection(Array, 'database')
+#1 /home/innergy/public_html/classes/propel/Propel.php(538): Propel::getConnection('database', 'write')
+#2 /home/innergy/public_html/classes/orm/om/BaseConfigurationPeer.php(264): Propel::getConnection('database', 'read')
+#3 /home/innergy/public_html/classes/orm/om/BaseConfigurationPeer.php(246): BaseConfigurationPeer::doSelectStmt(Object(Criteria), NULL)
+#4 /home/innergy/public_html/classes/orm/om/BaseConfigurationPeer.php(229): BaseConfigurationPeer::doSelect(Object(Criteria), NULL)
+#5 /home/innergy/public_html/classes/orm/ConfigurationPeer.php(62): BaseConfigurationPeer::doSelectOne(Object(Criteria))
+#6 /home/innergy/public_html/classes/core/Application.php(100): ConfigurationPeer::getValueByKey('template')
+#7 /home/innergy/public_html/classes/core/Application.php(75): Application->handleBasePath()
+#8 /home/innergy/public_html/index.php(9): Application->start()
+#9 {main}
+******************************************************
+Oct 16 09:03:18 App [error] Unable to open PDO connection [wrapped: SQLSTATE[42000] [1044] Access denied for user 'innergy_user'@'localhost' to database 'innergy_cms']
+#0 /home/innergy/public_html/classes/propel/Propel.php(523): Propel::initConnection(Array, 'database')
+#1 /home/innergy/public_html/classes/propel/Propel.php(538): Propel::getConnection('database', 'write')
+#2 /home/innergy/public_html/classes/orm/om/BaseConfigurationPeer.php(264): Propel::getConnection('database', 'read')
+#3 /home/innergy/public_html/classes/orm/om/BaseConfigurationPeer.php(246): BaseConfigurationPeer::doSelectStmt(Object(Criteria), NULL)
+#4 /home/innergy/public_html/classes/orm/om/BaseConfigurationPeer.php(229): BaseConfigurationPeer::doSelect(Object(Criteria), NULL)
+#5 /home/innergy/public_html/classes/orm/ConfigurationPeer.php(62): BaseConfigurationPeer::doSelectOne(Object(Criteria))
+#6 /home/innergy/public_html/classes/core/Application.php(100): ConfigurationPeer::getValueByKey('template')
+#7 /home/innergy/public_html/classes/core/Application.php(75): Application->handleBasePath()
+#8 /home/innergy/public_html/index.php(9): Application->start()
+#9 {main}
+******************************************************
+May 16 14:03:18 App [error] Unable to open PDO connection [wrapped: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+]
+#0 C:\xampp5\htdocs\itconcept\classes\propel\Propel.php(523): Propel::initConnection(Array, 'database')
+#1 C:\xampp5\htdocs\itconcept\classes\propel\Propel.php(538): Propel::getConnection('database', 'write')
+#2 C:\xampp5\htdocs\itconcept\classes\orm\om\BaseConfigurationPeer.php(264): Propel::getConnection('database', 'read')
+#3 C:\xampp5\htdocs\itconcept\classes\orm\om\BaseConfigurationPeer.php(246): BaseConfigurationPeer::doSelectStmt(Object(Criteria), NULL)
+#4 C:\xampp5\htdocs\itconcept\classes\orm\om\BaseConfigurationPeer.php(229): BaseConfigurationPeer::doSelect(Object(Criteria), NULL)
+#5 C:\xampp5\htdocs\itconcept\classes\orm\ConfigurationPeer.php(62): BaseConfigurationPeer::doSelectOne(Object(Criteria))
+#6 C:\xampp5\htdocs\itconcept\classes\core\Application.php(100): ConfigurationPeer::getValueByKey('template')
+#7 C:\xampp5\htdocs\itconcept\classes\core\Application.php(75): Application->handleBasePath()
+#8 C:\xampp5\htdocs\itconcept\index.php(9): Application->start()
+#9 {main}
+******************************************************
