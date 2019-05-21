@@ -24,6 +24,10 @@ class ContentModule extends AbstractAdminModule
 
 			'content_home' => 'Home Content',
 			'contact_map' => 'Contact Map',
+			'home_address'	=> 'Home Address',
+			'home_phone' 	=> 'Home Phone',
+			'home_email' 	=> 'Home Email',
+			'home_support' 	=> 'Home Support',
 			#'content_sidebar' => 'Sidebar Content',
 			#'content_address' => 'Address Content',
 

@@ -95,4 +95,68 @@ class Testimonial extends BaseTestimonial {
  		}
  	}
 
+ 	
+	public function getPictureUrl()
+	{
+		$sFile = 'contents/'.$_SESSION[Attributes::SESSION_DOMAIN].'/images/'.$this->getPicture();
+		if(is_file($sFile))
+		{
+			return '/'.$sFile;
+		}
+		return false;
+	}
+	
+	public function getThumbnailURL($iWidth = null, $iHeight = null, $bFixedSize = false)
+	{
+		$sPic = $this->getPicture();
+		$sFile = 'contents/'.$_SESSION[Attributes::SESSION_DOMAIN].'/images/'.$iWidth.'x'.$iHeight.'_'.$sPic;
+		if(!is_file($sFile))
+		{
+			$sFileReal= 'contents/'.$_SESSION[Attributes::SESSION_DOMAIN].'/images/'.$sPic;
+			if(is_file($sFileReal))
+			{
+				$aImageData = getimagesize($sFileReal);
+				if($iWidth && $iHeight)
+				{
+					if(!$bFixedSize)
+					{
+						if($aImageData[0] / $aImageData[1] >= $iWidth/$iHeight)
+						{
+							$iHeight = $aImageData[1]/$aImageData[0]*$iWidth;
+						}
+						else
+						{
+							$iWidth = $aImageData[0]/$aImageData[1]*$iHeight;
+						}
+					}
+				}
+				else
+				{
+					if($iHeight)
+						$iWidth = $aImageData[0]/$aImageData[1]*$iHeight;
+					elseif($iWidth)
+						$iHeight = $aImageData[1]/$aImageData[0]*$iWidth;
+					else
+					{
+						$iWidth = $aImageData[0];
+						$iHeight = $aImageData[1];
+					}
+				}
+				ImageTool::generateThumbnail(
+						$sFileReal,
+						$sFile,
+						array($iWidth,$iHeight),
+						null,
+						$bFixedSize
+					); 
+			}
+		}
+		
+		if(!is_file($sFile))
+			$sFile = 'contents/'.$_SESSION[Attributes::SESSION_DOMAIN].'/images/'.$sPic;
+			
+		return '/'.$sFile;
+	}
+
+
 } // Testimonial

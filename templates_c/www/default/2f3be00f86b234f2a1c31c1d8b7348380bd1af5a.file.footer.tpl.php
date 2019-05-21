@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2019-05-16 14:17:17
+<?php /* Smarty version Smarty-3.1.8, created on 2019-05-21 12:00:57
          compiled from "templates/www/default\core\footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:74685cdd0c26ecb4c1-21775314%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2f3be00f86b234f2a1c31c1d8b7348380bd1af5a' => 
     array (
       0 => 'templates/www/default\\core\\footer.tpl',
-      1 => 1557991035,
+      1 => 1558414854,
       2 => 'file',
     ),
   ),
@@ -17,6 +17,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.8',
   'unifunc' => 'content_5cdd0c26f05e52_23094459',
+  'variables' => 
+  array (
+    'aConfig' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5cdd0c26f05e52_23094459')) {function content_5cdd0c26f05e52_23094459($_smarty_tpl) {?>       
@@ -27,14 +31,29 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <div class="row">
                 <div class="col-md-12 col-sm-12 text-center">
                     <ul class="social-icons margin-5px-bottom no-padding wow fadeInUp" data-wow-delay="300ms">
-                        <li><a href="javascript:void(0)"><i class="fa fa-facebook"></i> </a> </li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i> </a> </li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-google-plus"></i> </a> </li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-linkedin"></i> </a> </li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-instagram"></i> </a> </li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-envelope-o"></i> </a> </li>
+                      <?php if ($_smarty_tpl->tpl_vars['aConfig']->value['facebook_link']!=''){?>
+                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['aConfig']->value['facebook_link'];?>
+"><i class="fa fa-facebook"></i> </a> </li>
+                      <?php }?>
+                      <?php if ($_smarty_tpl->tpl_vars['aConfig']->value['twitter_link']!=''){?>
+                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['aConfig']->value['twitter_link'];?>
+"><i class="fa fa-twitter"></i> </a> </li>
+                      <?php }?>
+                      <?php if ($_smarty_tpl->tpl_vars['aConfig']->value['linkedin_link']!=''){?>
+                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['aConfig']->value['linkedin_link'];?>
+"><i class="fa fa-linkedin"></i> </a> </li>
+                      <?php }?>
+                      <?php if ($_smarty_tpl->tpl_vars['aConfig']->value['instagram_link']!=''){?>
+                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['aConfig']->value['instagram_link'];?>
+"><i class="fa fa-instagram"></i> </a> </li>
+                      <?php }?>
+                      <?php if ($_smarty_tpl->tpl_vars['aConfig']->value['mail_link']!=''){?>
+                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['aConfig']->value['mail_link'];?>
+"><i class="fa fa-envelope-o"></i> </a> </li>
+                      <?php }?>
                     </ul>
-                    <p class="copyrights wow fadeInUp no-margin" data-wow-delay="350ms"> &copy; 2018 Digione. made with love by <a href="#.">themesindustry</a> </p>
+                    <p class="copyrights wow fadeInUp no-margin" data-wow-delay="350ms"><?php echo $_smarty_tpl->tpl_vars['aConfig']->value['copyright_en'];?>
+</p>
                 </div>
             </div>
         </div>
@@ -113,6 +132,9 @@ jquery.themepunch.revolution.min.js"></script>
 /map.js"></script>
     <script src="<?php echo $_smarty_tpl->getConfigVariable('JS_PATH');?>
 /main.js"></script>
+    <script type="text/javascript">
+      <?php echo $_smarty_tpl->tpl_vars['aConfig']->value['custom_script'];?>
 
+    </script>
   </body>
 </html><?php }} ?>

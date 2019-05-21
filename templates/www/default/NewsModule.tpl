@@ -1,61 +1,57 @@
-        <!--# content #-->
-        <div class="content">
-
-          <div class="page-title">
-            <div class="title-overlay">
-              <h1>{$oMod->getName()}</h1>
-            </div>
-            <img src="{#IMAGE_PATH#}/default-title-bg.jpg" class="img-fluid">
-          </div>
-
-          {if $news}
-          <div class="container news-detail">
-            <br><br>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="entry-content">
-                  <a href="{$oMod->getBasePage('News',$news->getUrl())}">
-                    <div class="news-title">{$news->getName()}</div>
-                    <div class="news-date">{$news->getDate('F d, Y')}</div>
-                  </a>
-                  <p class="text-center">
-                    <img src="{$news->getPictureUrl()}" class="img-fluid">
-                  </p>
-                  {$news->getDescription()}
-                </div>
+        {if $news}
+          <section class="blog-header no-padding-bottom blog-page-padding-top bg-blog-right">
+              <div class="container">
+                      <div class="font-style-1-outer">
+                      <h3 class="alt-font font-weight-100 text-white text-center">{$news->getName()}</h3>
+                  </div>
               </div>
+          </section>
+          <div class="row">
+            <!-- start post item -->
+            <div class="col-md-6 col-sm-6 col-xs-12 blog-post-content padding-30px-tb margin-30px-bottom bg-white xs-margin-30px-bottom xs-text-center">
+                <div class="blog-image">
+                  <a href="#"><img src="{$news->getPictureUrl()}" alt="" data-no-retina=""></a>
+                </div>
+                <div class="blog-text border-all display-inline-block width-100">
+                    <div class="content padding-30px-top">
+                        <div class="text-medium-gray text-small margin-10px-bottom text-capitalizealt-font font-weight-400">
+                          <span>Posted on {$news->getDate('F d, Y')}</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                          {*<span><a href="#." class="text-medium-gray ">Branding</a></span>*}
+                        </div>
+                        <a href="#" class="text-blackish text-capitalize alt-font text-heading-small font-weight-600 margin-15px-bottom display-block">{$news->getName()}</a>
+                        <p class="no-margin">{$news->getDescription()|truncate:300}</p>
+                    </div>
+                </div>
             </div>
-            <br><br>
           </div>
-          {else}
-          <div class="container news-list">
-          <br><br>
-          {if count($news_list) > 0}
+        {else}
+          <section class="blog-header no-padding-bottom blog-page-padding-top bg-blog-right">
+              <div class="container">
+                      <div class="font-style-1-outer">
+                      <h3 class="alt-font font-weight-100 text-white text-center">Latest Blogs</h3>
+                  </div>
+              </div>
+          </section>
+          <div class="row">
+            <!-- start post item -->
+            {if count($news_list) > 0}
             {foreach $news_list as $data}
-            <div class="row">
-              <div class="col-md-5">
-                <img src="{$data->getPictureUrl()}" class="img-fluid">
-              </div>
-              <div class="col-md-7">
-                <div class="entry-content">
-                  <a href="{$oMod->getBasePage('News',$data->getUrl())}">
-                    <div class="news-title">{$data->getName()}</div>
-                    <div class="news-date">{$data->getDate('F d, Y')}</div>
-                  </a>
-                  {$data->getDescription()|truncate:300}
+            <div class="col-md-6 col-sm-6 col-xs-12 blog-post-content padding-30px-tb margin-30px-bottom bg-white xs-margin-30px-bottom xs-text-center">
+                <div class="blog-image">
+                  <a href="#"><img src="{$data->getPictureUrl()}" alt="" data-no-retina=""></a>
                 </div>
-              </div>
+                <div class="blog-text border-all display-inline-block width-100">
+                    <div class="content padding-30px-top">
+                        <div class="text-medium-gray text-small margin-10px-bottom text-capitalizealt-font font-weight-400">
+                          <span>Posted on {$data->getDate('F d, Y')}</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                          {*<span><a href="#." class="text-medium-gray ">Branding</a></span>*}
+                        </div>
+                        <a href="{$data->getUrl()}" class="text-blackish text-capitalize alt-font text-heading-small font-weight-600 margin-15px-bottom display-block">{$data->getName()}</a>
+                        <p class="no-margin">{$data->getDescription()|truncate:300}</p>
+                    </div>
+                </div>
             </div>
-            <br>
             {/foreach}
-          {else}
-            <div class="text-center">
-              No News Found
-            </div>
-          {/if}
-          <br>
+            {/if}
           </div>
-          {/if}
-
-        </div>
-        <!--# content #-->
+        {/if}

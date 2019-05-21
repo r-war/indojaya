@@ -105,14 +105,23 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 text-center">
                     <ul class="social-icons margin-5px-bottom no-padding wow fadeInUp" data-wow-delay="300ms">
-                        <li><a href="javascript:void(0)"><i class="fa fa-facebook"></i> </a> </li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i> </a> </li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-google-plus"></i> </a> </li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-linkedin"></i> </a> </li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-instagram"></i> </a> </li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-envelope-o"></i> </a> </li>
+                      {if $aConfig.facebook_link !=''}
+                        <li><a href="{$aConfig.facebook_link}"><i class="fa fa-facebook"></i> </a> </li>
+                      {/if}
+                      {if $aConfig.twitter_link !=''}
+                        <li><a href="{$aConfig.twitter_link}"><i class="fa fa-twitter"></i> </a> </li>
+                      {/if}
+                      {if $aConfig.linkedin_link !=''}
+                        <li><a href="{$aConfig.linkedin_link}"><i class="fa fa-linkedin"></i> </a> </li>
+                      {/if}
+                      {if $aConfig.instagram_link !=''}
+                        <li><a href="{$aConfig.instagram_link}"><i class="fa fa-instagram"></i> </a> </li>
+                      {/if}
+                      {if $aConfig.mail_link !=''}
+                        <li><a href="{$aConfig.mail_link}"><i class="fa fa-envelope-o"></i> </a> </li>
+                      {/if}
                     </ul>
-                    <p class="copyrights wow fadeInUp no-margin" data-wow-delay="350ms"> &copy; 2018 Digione. made with love by <a href="#.">themesindustry</a> </p>
+                    <p class="copyrights wow fadeInUp no-margin" data-wow-delay="350ms">{$aConfig.copyright_en}</p>
                 </div>
             </div>
         </div>
@@ -164,6 +173,8 @@
 
     <script src="{#JS_PATH#}/map.js"></script>
     <script src="{#JS_PATH#}/main.js"></script>
-
+    <script type="text/javascript">
+      {$aConfig.custom_script}
+    </script>
   </body>
 </html>

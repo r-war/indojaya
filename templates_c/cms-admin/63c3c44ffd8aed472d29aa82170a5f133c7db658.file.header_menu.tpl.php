@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2019-05-20 15:43:03
+<?php /* Smarty version Smarty-3.1.8, created on 2019-05-21 11:17:17
          compiled from "templates/cms-admin\core\header_menu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:283445cdd103de531f0-30380459%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '63c3c44ffd8aed472d29aa82170a5f133c7db658' => 
     array (
       0 => 'templates/cms-admin\\core\\header_menu.tpl',
-      1 => 1558341781,
+      1 => 1558412235,
       2 => 'file',
     ),
   ),
@@ -60,7 +60,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   </li>
   <?php }?>
   
-  <?php if ($_smarty_tpl->tpl_vars['oLoginAdmin']->value->isAuthorized(array('Content','Page','Service','Menu','News','Service','Event'))){?>
+  <?php if ($_smarty_tpl->tpl_vars['oLoginAdmin']->value->isAuthorized(array('Content','Page','Service','Team','Menu','News','Service','Event'))){?>
   <li class="dropdown <?php if (in_array($_smarty_tpl->tpl_vars['oMod']->value->getModule(),array('Content','Page','Menu','News','Service','Event'))){?>active<?php }?>">
   	<a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo $_smarty_tpl->tpl_vars['oMod']->value->getBasePage($_smarty_tpl->tpl_vars['oLoginAdmin']->value->isAuthorized(array('Content','Page','Menu','News','Service','Event')));?>
 ">
@@ -79,7 +79,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	    <?php }?>
 	    <?php if (in_array('Service',$_smarty_tpl->tpl_vars['oLoginAdmin']->value->getPrivilegesArray())){?>
 	    <li <?php if ($_smarty_tpl->tpl_vars['oMod']->value->getModule()=='Service'){?>class="active"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['oMod']->value->getBasePage('Service');?>
-">Service</a></li>
+">Services</a></li>
+	    <?php }?>
+	    <?php if (in_array('Team',$_smarty_tpl->tpl_vars['oLoginAdmin']->value->getPrivilegesArray())){?>
+	    <li <?php if ($_smarty_tpl->tpl_vars['oMod']->value->getModule()=='Team'){?>class="active"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['oMod']->value->getBasePage('Team');?>
+">Teams</a></li>
 	    <?php }?>
 	    <?php if (in_array('Content',$_smarty_tpl->tpl_vars['oLoginAdmin']->value->getPrivilegesArray())){?>
 	    <li <?php if ($_smarty_tpl->tpl_vars['oMod']->value->getModule()=='Content'){?>class="active"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['oMod']->value->getBasePage('Content');?>
@@ -123,6 +127,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	    <?php if (in_array('Banner',$_smarty_tpl->tpl_vars['oLoginAdmin']->value->getPrivilegesArray())){?>
 	    <li <?php if ($_smarty_tpl->tpl_vars['oMod']->value->getModule()=='Banner'&&($_GET['mode']=='sliding'||!$_GET['mode'])){?>class="active"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['oMod']->value->getBasePage('Banner','mode=sliding');?>
 ">Home Banner</a></li>
+	    <?php }?>
+	    <?php if (in_array('Banner',$_smarty_tpl->tpl_vars['oLoginAdmin']->value->getPrivilegesArray())){?>
+	    <li <?php if ($_smarty_tpl->tpl_vars['oMod']->value->getModule()=='Banner'&&($_GET['mode']=='client'||!$_GET['mode'])){?>class="active"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['oMod']->value->getBasePage('Banner','mode=client');?>
+">Client Logo</a></li>
 	    <?php }?>
 	    <?php if (in_array('Gallery',$_smarty_tpl->tpl_vars['oLoginAdmin']->value->getPrivilegesArray())){?>
 	    <li <?php if ($_smarty_tpl->tpl_vars['oMod']->value->getModule()=='Gallery'){?>class="active"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['oMod']->value->getBasePage('Gallery');?>

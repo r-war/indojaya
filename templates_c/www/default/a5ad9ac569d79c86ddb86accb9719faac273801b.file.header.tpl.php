@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2019-05-16 16:17:31
+<?php /* Smarty version Smarty-3.1.8, created on 2019-05-21 12:11:01
          compiled from "templates/www/default\core\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:197695cdd0c26ce6e54-61818989%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a5ad9ac569d79c86ddb86accb9719faac273801b' => 
     array (
       0 => 'templates/www/default\\core\\header.tpl',
-      1 => 1557998249,
+      1 => 1558415459,
       2 => 'file',
     ),
   ),
@@ -103,7 +103,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <nav class="navbar navbar-inverse width-100 z-index-5 alt-font">
             <div class="container nav-header">
                 <div class="navbar-header margin-5px-top">
-                    <a href="#home" title="Logo" class="logo scroll"><img src="/contents/images/<?php echo $_smarty_tpl->tpl_vars['aConfig']->value['web_logo'];?>
+                    <a href="/" title="Logo" class="logo scroll"><img src="/contents/images/<?php echo $_smarty_tpl->tpl_vars['aConfig']->value['web_logo'];?>
 " class="logo-dark" alt="Digione"><img src="/contents/images/<?php echo $_smarty_tpl->tpl_vars['aConfig']->value['web_logo'];?>
 " alt="Digione" class="logo-light default"></a>
 

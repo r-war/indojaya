@@ -30,6 +30,7 @@ class AdminTypeModule extends AbstractAdminModule
         'Content' => 'Content',
         'News'	=> 'News', /*, 'News' => 'News'/*,'Service' => 'Service' ,*/
         'Service' => 'Services',
+        'Team'    => 'Teams',
         /*'Seo' => 'SEO'*/
         /*,'Event' => 'Event'*/
       ),

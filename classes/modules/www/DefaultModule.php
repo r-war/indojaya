@@ -25,7 +25,9 @@ class DefaultModule extends AbstractCommonModule
 			"news_list" 		=> NewsPeer::getAll($param, null, -1, $param, 5),
 			"testimonials" 		=> TestimonialPeer::getNewest(),
 			"services" 			=> ServicePeer::getAll(),
+			'teams' 			=> TeamPeer::getAll(),
 			"banners" 			=> BannerPeer::getByGroup("sliding"),
+			"clients" 			=> BannerPeer::getByGroup("client"),
 			"source"			=> 'Default'
 		];
 

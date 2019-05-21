@@ -3226,3 +3226,8 @@ svg {
   -webkit-box-shadow: 0.087px 0.996px 5px 0px rgba(0, 0, 0, 0.22);
   box-shadow: 0.087px 0.996px 5px 0px rgba(0, 0, 0, 0.22);
 }
+@media screen and (min-width: 1024px){
+    .map{
+        padding-bottom: 35.25% !important;
+    }
+}

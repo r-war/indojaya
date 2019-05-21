@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2019-05-20 15:46:21
+<?php /* Smarty version Smarty-3.1.8, created on 2019-05-21 09:09:48
          compiled from "templates/cms-admin\ajax\ServiceModule.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:79245ce268f9a80461-86986435%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd315d9cb23ed6b09487c61e90f535fcf13bc7c41' => 
     array (
       0 => 'templates/cms-admin\\ajax\\ServiceModule.tpl',
-      1 => 1558341978,
+      1 => 1558343989,
       2 => 'file',
     ),
   ),
@@ -55,6 +55,13 @@ if (!is_callable('smarty_function_val')) include 'C:\\xampp5\\htdocs\\itconcept\
 </label>
 		     <div class="controls">
 		       <input type="text" name="oService-name" id="name" value="<?php echo $_smarty_tpl->tpl_vars['oService']->value->getName();?>
+" class="span12"/>
+		     </div>
+		   </div>
+		   <div class="control-group">
+		     <label class="control-label" for="short_description">Icon</label>
+		     <div class="controls">
+		       <input type="text" name="oService-short_description" id="short_description" value="<?php echo $_smarty_tpl->tpl_vars['oService']->value->getShortDescription();?>
 " class="span12"/>
 		     </div>
 		   </div>

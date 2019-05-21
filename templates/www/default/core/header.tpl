@@ -57,7 +57,7 @@
         <nav class="navbar navbar-inverse width-100 z-index-5 alt-font">
             <div class="container nav-header">
                 <div class="navbar-header margin-5px-top">
-                    <a href="#home" title="Logo" class="logo scroll"><img src="/contents/images/{$aConfig.web_logo}" class="logo-dark" alt="Digione"><img src="/contents/images/{$aConfig.web_logo}" alt="Digione" class="logo-light default"></a>
+                    <a href="/" title="Logo" class="logo scroll"><img src="/contents/images/{$aConfig.web_logo}" class="logo-dark" alt="Digione"><img src="/contents/images/{$aConfig.web_logo}" alt="Digione" class="logo-light default"></a>
 
                 </div>
                 <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs margin-5px-top" aria-hidden="true">

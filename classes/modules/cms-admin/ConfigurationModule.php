@@ -143,7 +143,7 @@ class ConfigurationModule extends AbstractAdminModule
 							// 'style' => 'height:55px;'
 						// ),
 					'copyright_en' => array(
-							'name' => 'Website Copyright (EN)',
+							'name' => 'Website Copyright',
 							'type' => 'textarea',
 							'style' => 'height:55px;'
 						),
@@ -154,11 +154,11 @@ class ConfigurationModule extends AbstractAdminModule
 							'style' => 'height:55px;'
 						),
 					*/
-					// 'google_map' => array(
-							// 'name' => 'Google Map Iframe',
-							// 'type' => 'textarea',
-							// 'help' => 'Paste google maps iframe code here'
-						// ),
+					'google_map' => array(
+							 'name' => 'Google Map Iframe',
+							 'type' => 'textarea',
+							 'help' => 'Paste google maps iframe code here'
+					 ),
 					'meta_name_description' => array(
 							'name' => 'SEO Description',
 							'type' => 'textarea',

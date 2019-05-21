@@ -15,5 +15,20 @@ require 'orm/om/BaseTeamPeer.php';
  * @package    orm
  */
 class TeamPeer extends BaseTeamPeer {
-
+	static function getAll(Parameter $oParam = null, Sortable $oSortable = null, $iPage = -1,&$oPager = null,$iRows = 20)
+	{
+		$oCrit = new Criteria();
+		$oCrit->addAscendingOrderByColumn(self::INDEX);
+	
+		if($oParam instanceof Parameter)
+		{
+			if($oParam->isExists('keywords'))
+			{
+				$oCrit->add(self::NAME, '%'.$oParam->get('keywords').'%', Criteria::LIKE);
+			}
+		}
+	
+		$aList = self::getList($oCrit,$oSortable,$iPage,$oPager,$iRows);
+		return $aList;
+	}
 } // TeamPeer

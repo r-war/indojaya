@@ -24,7 +24,7 @@
   </li>
   {/if}
   
-  {if $oLoginAdmin->isAuthorized(array('Content','Page','Service','Menu','News','Service','Event'))}
+  {if $oLoginAdmin->isAuthorized(array('Content','Page','Service','Team','Menu','News','Service','Event'))}
   <li class="dropdown {if in_array($oMod->getModule(),array('Content','Page','Menu','News','Service','Event'))}active{/if}">
   	<a class="dropdown-toggle" data-toggle="dropdown" href="{$oMod->getBasePage($oLoginAdmin->isAuthorized(array('Content','Page','Menu','News','Service','Event')))}">
   		<i class="icon-pencil"></i> Content <b class="caret"></b>
@@ -48,7 +48,10 @@
 	    <li {if $oMod->getModule() == 'Page'}class="active"{/if}><a href="{$oMod->getBasePage('Page')}">{loc k=page}</a></li>
 	    {/if}
 	    {if in_array('Service',$oLoginAdmin->getPrivilegesArray())}
-	    <li {if $oMod->getModule() == 'Service'}class="active"{/if}><a href="{$oMod->getBasePage('Service')}">Service</a></li>
+	    <li {if $oMod->getModule() == 'Service'}class="active"{/if}><a href="{$oMod->getBasePage('Service')}">Services</a></li>
+	    {/if}
+	    {if in_array('Team',$oLoginAdmin->getPrivilegesArray())}
+	    <li {if $oMod->getModule() == 'Team'}class="active"{/if}><a href="{$oMod->getBasePage('Team')}">Teams</a></li>
 	    {/if}
 	    {if in_array('Content',$oLoginAdmin->getPrivilegesArray())}
 	    <li {if $oMod->getModule() == 'Content'}class="active"{/if}><a href="{$oMod->getBasePage('Content')}">{loc k=content}</a></li>
@@ -83,6 +86,9 @@
 	    {/if*}
 	    {if in_array('Banner',$oLoginAdmin->getPrivilegesArray())}
 	    <li {if $oMod->getModule() == 'Banner' && ( $smarty.get.mode == 'sliding' || !$smarty.get.mode )}class="active"{/if}><a href="{$oMod->getBasePage('Banner','mode=sliding')}">Home Banner</a></li>
+	    {/if}
+	    {if in_array('Banner',$oLoginAdmin->getPrivilegesArray())}
+	    <li {if $oMod->getModule() == 'Banner' && ( $smarty.get.mode == 'client' || !$smarty.get.mode )}class="active"{/if}><a href="{$oMod->getBasePage('Banner','mode=client')}">Client Logo</a></li>
 	    {/if}
 	    {if in_array('Gallery',$oLoginAdmin->getPrivilegesArray())}
 	    <li {if $oMod->getModule() == 'Gallery'}class="active"{/if}><a href="{$oMod->getBasePage('Gallery')}">Gallery</a></li>

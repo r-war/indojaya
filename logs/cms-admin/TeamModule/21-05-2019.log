@@ -1,0 +1,27 @@
+May 21 10:03:47 TeamModule [error]  [wrapped: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'itconcept.team' doesn't exist]
+===================
+Server Addr: 127.0.0.1
+Server Host: itconcept.cms
+Remote Addr: 127.0.0.1
+Browser: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36
+p: cms-admin
+x: team
+===================
+#0 C:\xampp5\htdocs\itconcept\classes\orm\om\BaseTeamPeer.php(221): BasePeer::doCount(Object(Criteria), Object(DebugPDO))
+#1 [internal function]: BaseTeamPeer::doCount(Object(Criteria))
+#2 C:\xampp5\htdocs\itconcept\classes\propel\util\PropelPager.php(564): call_user_func(Array, Object(Criteria))
+#3 C:\xampp5\htdocs\itconcept\classes\propel\util\PropelPager.php(362): PropelPager->getTotalRecordCount()
+#4 C:\xampp5\htdocs\itconcept\classes\propel\util\PropelPager.php(485): PropelPager->getTotalPages()
+#5 C:\xampp5\htdocs\itconcept\classes\propel\util\PropelPager.php(533): PropelPager->getPage()
+#6 C:\xampp5\htdocs\itconcept\classes\propel\util\PropelPager.php(297): PropelPager->getStart()
+#7 C:\xampp5\htdocs\itconcept\classes\propel\util\PropelPager.php(280): PropelPager->doRs()
+#8 C:\xampp5\htdocs\itconcept\classes\orm\om\BaseTeamPeer.php(735): PropelPager->getResult()
+#9 C:\xampp5\htdocs\itconcept\classes\orm\TeamPeer.php(31): BaseTeamPeer::getList(Object(Criteria), Object(Sortable), NULL, Object(PropelPager), 20)
+#10 C:\xampp5\htdocs\itconcept\classes\modules\cms-admin\TeamModule.php(79): TeamPeer::getAll(Object(Parameter), Object(Sortable), NULL, Object(PropelPager))
+#11 C:\xampp5\htdocs\itconcept\classes\modules\cms-admin\TeamModule.php(67): TeamModule->prepareTeam()
+#12 C:\xampp5\htdocs\itconcept\classes\core\AbstractModule.php(485): TeamModule->doBuildTemplate()
+#13 C:\xampp5\htdocs\itconcept\classes\core\Application.php(375): AbstractModule->doProcess()
+#14 C:\xampp5\htdocs\itconcept\classes\core\Application.php(308): Application->executeModule(Object(TeamModule))
+#15 C:\xampp5\htdocs\itconcept\index.php(10): Application->process()
+#16 {main}
+******************************************************
