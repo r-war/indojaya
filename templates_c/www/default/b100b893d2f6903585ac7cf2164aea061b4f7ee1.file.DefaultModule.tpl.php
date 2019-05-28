@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2019-05-21 13:56:09
+<?php /* Smarty version Smarty-3.1.8, created on 2019-05-27 09:35:12
          compiled from "templates/www/default\DefaultModule.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:285425cdd0c26de0e96-04893764%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b100b893d2f6903585ac7cf2164aea061b4f7ee1' => 
     array (
       0 => 'templates/www/default\\DefaultModule.tpl',
-      1 => 1558421766,
+      1 => 1558924510,
       2 => 'file',
     ),
   ),
@@ -29,6 +29,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'team' => 0,
     'socials' => 0,
     'social' => 0,
+    'gallery' => 0,
+    'category' => 0,
+    'gall' => 0,
+    'i' => 0,
     'testimonials' => 0,
     'testimonial' => 0,
     'clients' => 0,
@@ -90,23 +94,27 @@ $_smarty_tpl->tpl_vars['banner']->_loop = true;
                     data-frames='[{"delay": 500, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, 
                                     {"delay": "wait", "speed": 300, "to": "opacity: 0"}]'  data-x="center"
                     data-y="center" data-hoffset="0" data-voffset="0" data-width="['auto']" data-height="['auto']">
-                    <form method="post" class="contact">
+                    <?php echo $_smarty_tpl->getSubTemplate ('core/feedback.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+                    <form method="post" class="contact" id="quotes">
                         <div class="contact-step-1">
-                            <div class="form-inline">
+                            <h3 class="text-capitalize text-center font-weight-600 alt-font text-blackish">Free SEO Quote </h3>
+                            <div class="form-inline bg-white-p5">
                                 <div class="form-group">
-                                    <input type="text" name="website" placeholder="&#xf57d; Enter Your Website"
-                                        class="form-control fontAwesome">
+                                    <input type="text" name="website" placeholder='&#xf0ac; Enter Your Website'
+                                        class="form-control fontAwesome hide-border mb-16px">
                                 </div>
-                                <a class="btn btn-blue" onclick="goNextStep()">Get Your Free Quote</a>
+                                <a class="btn btn-blue" id="nextStep" onclick="goNextStep()">Get Your Free Quote</a>
                             </div>
                         </div>
                         <div class="contact-step-2">
+                            <h3 class="text-capitalize text-center font-weight-600 alt-font text-blackish">Enter Your Detail</h3>
                             <div class="form-group">
-                                <input type="text" name="name" placeholder="Name" class="form-control">
-                                <input type="text" name="email" placeholder="Email" class="form-control">
-                                <input type="text" name="phone" placeholder="Phone" class="form-control">
+                                <input type="text" name='&#xf406; Name' placeholder="Name" class="form-control">
+                                <input type="text" name='&#xf02b; Email' placeholder="Email" class="form-control">
+                                <input type="text" name='&#xf3cd; Phone' placeholder="Phone" class="form-control">
                             </div>
-                            <button name="submit" class="btn btn-green-blue">Quote</button>
+                            <button name="quote" class="btn btn-green-blue">Quote</button>
                         </div>
                     </form>
 
@@ -122,32 +130,79 @@ $_smarty_tpl->tpl_vars['banner']->_loop = true;
 
 <!-- four boxes-->
 <section class="no-padding" id="services">
-    <div class="swiper-container container" id="services">
-        <div class="swiper-wrapper">
-            <?php  $_smarty_tpl->tpl_vars['service'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['service']->_loop = false;
+    <div class="row"> 
+        <?php  $_smarty_tpl->tpl_vars['service'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['service']->_loop = false;
+ $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
  $_from = $_smarty_tpl->tpl_vars['services']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['service']->key => $_smarty_tpl->tpl_vars['service']->value){
 $_smarty_tpl->tpl_vars['service']->_loop = true;
+ $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['service']->key;
 ?>
-            <div class="swiper-slide textarea">
-                <div class="row text-center">
-                    <div class="col-md-12">
-                        <div class="icon-holder"><i class="<?php echo $_smarty_tpl->tpl_vars['service']->value->getShortDescription();?>
-"></i></div>
-                        <h4><?php echo $_smarty_tpl->tpl_vars['service']->value->getName();?>
-</h4>
-                        <?php echo $_smarty_tpl->tpl_vars['service']->value->getDescription();?>
+            <div class="col-md-6 col-sm-6 no-padding">
+                <div class="four-boxes center-block text-blackish text-center <?php if (($_smarty_tpl->tpl_vars['key']->value+1)%3==1||$_smarty_tpl->tpl_vars['key']->value%3==1&&$_smarty_tpl->tpl_vars['key']->value!==1){?>bg-sky-blue text-white<?php }?> padding-140px-tb padding-30px-lr wow fadeIn">
 
-                    </div>
+                    <h3 class="text-capitalize font-weight-100 alt-font no-margin-bottom"><?php echo $_smarty_tpl->tpl_vars['service']->value->getName();?>
+</h3>
+
+                    <p
+                        class="text-center margin-20px-lr text-medium width-70 text-medium-gray main-font margin-30px-top xs-margin-20px-top">
+                        <?php echo $_smarty_tpl->tpl_vars['service']->value->getDescription();?>
+</p>
+                    <a href="#portfolio"
+                        class="scroll btn btn-blackish font-weight-600 alt-font btn-rounded btn-large margin-20px-top">Browse
+                        Work</a>
+
                 </div>
             </div>
-            <?php } ?>
-        </div>
-        <div class="swiper-pagination"></div>
+        <?php } ?>
     </div>
     
 </section>
 <!--  end of box section -->
+
+<!-- start counters-->
+<section id="counters" class="demo-banner">
+
+    <div class="container">
+
+        <div class="text-left counters-heading margin-80px-bottom xs-margin-50px-bottom">
+            <h2 class="text-blackish alt-font font-weight-100 no-margin">Statistical Numbers</h2>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-7 col-sm-12">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="text-center text-white serial-box  pointer center-block wow fadeInDown">
+                            <i class="fa fa-smile-o text-xx-large" aria-hidden="true"></i>
+                            <p class="font-weight-300 text-xx-large no-margin count">54</p>
+                            <p class="no-margin">Happy clients</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="text-center serial-box-1 text-white pointer center-block wow fadeInDown">
+                            <i class="fa fa-bar-chart text-xx-large" aria-hidden="true"></i>
+                            <p class="font-weight-300 text-xx-large no-margin count">125</p>
+                            <p class="no-margin">Lines of Code</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="text-center serial-box-2 text-white pointer center-block wow fadeInDown">
+                            <i class="fa fa-trophy text-xx-large" aria-hidden="true"></i>
+                            <p class="font-weight-300 text-xx-large no-margin count">956</p>
+                            <p class="no-margin">Awards Received</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5"></div>
+        </div>
+    </div>
+
+</section>
+<!-- Ends counters -->
 
 <!-- team section -->
 <section class="bg-extreme-light-gray" id="team">
@@ -156,7 +211,7 @@ $_smarty_tpl->tpl_vars['service']->_loop = true;
 
         <div class="row text-center team-text">
 
-            <h2 class="text-blackish alt-font font-weight-300">Creative Team</h2>
+            <h2 class="text-blackish alt-font font-weight-300">Our Team</h2>
             <p
                 class="xs-margin-20px-lr xs-no-margin-bottom margin-80px-bottom text-medium text-center text-medium-gray">
                 Sebagai team profesional muda, kami bekerja dengan mengoptimalkan konsep dan content terbaik yang
@@ -309,6 +364,87 @@ feature-one.png" alt="image">
 </section>
 <!--Parallax Ends-->
 
+<!-- Portfolio Starts -->
+<section id="portfolio">
+
+    <div class="container">
+        <div class="row">
+            <div class="wow fadeIn text-center">
+                <h2 class="text-blackish alt-font font-weight-100">Portofolio</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div id="js-filters-mosaic-flat" class="text-center xs-no-margin-top cbp-l-filters-buttonCenter">
+                <div data-filter="*" class="cbp-filter-item">
+                    All
+                    <div class="cbp-filter-counter"></div>
+
+                </div>
+
+                <span class="text-blue">/</span>
+
+                <?php  $_smarty_tpl->tpl_vars['category'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['category']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['gallery']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['category']->key => $_smarty_tpl->tpl_vars['category']->value){
+$_smarty_tpl->tpl_vars['category']->_loop = true;
+?>
+                <div data-filter=".<?php echo $_smarty_tpl->tpl_vars['category']->value->getCode();?>
+" class="<?php if ($_smarty_tpl->tpl_vars['category']->value->getCode()=='website'){?>cbp-filter-item cbp-filter-item-active<?php }else{ ?>cbp-filter-item<?php }?>">
+                    <?php echo $_smarty_tpl->tpl_vars['category']->value->getName();?>
+
+                    <div class="cbp-filter-counter"></div>
+                </div>
+                <span class="text-blue">/</span>
+                <?php } ?>
+
+            </div>
+            <div id="js-grid-mosaic-flat" class="cbp cbp-l-grid-mosaic-flat">
+                <?php  $_smarty_tpl->tpl_vars['gall'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['gall']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['gallery']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['gall']->key => $_smarty_tpl->tpl_vars['gall']->value){
+$_smarty_tpl->tpl_vars['gall']->_loop = true;
+?>
+                    <?php  $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['i']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['gall']->value->getPictures(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['i']->key => $_smarty_tpl->tpl_vars['i']->value){
+$_smarty_tpl->tpl_vars['i']->_loop = true;
+?>
+                        <div class="cbp-item <?php echo $_smarty_tpl->tpl_vars['gall']->value->getCode();?>
+">
+                            <div class="cbp-caption">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="<?php echo $_smarty_tpl->tpl_vars['i']->value->getPictureUrl();?>
+" alt="project">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignCenter">
+                                        <div class="cbp-l-caption-body">
+                                            <a href="<?php echo $_smarty_tpl->tpl_vars['i']->value->getPictureUrl();?>
+" class="cbp-lightbox">
+                                                <div class="cbp-l-caption-title"><?php echo $_smarty_tpl->tpl_vars['i']->value->getName();?>
+</div>
+                                                <div class="line-bar">
+                                                    <hr>
+                                                </div>
+                                                <p class="brand-graphic alt-font"><?php echo $_smarty_tpl->tpl_vars['i']->value->getDescription();?>
+</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>        
+                    <?php } ?>
+                <?php } ?>
+                
+            </div>
+            
+        </div>
+    </div>
+
+</section>
+<!-- Portfolio ends -->
+
 
 <!-- clients testimonial-->
 <section id="our-testimonial" class="padding">
@@ -354,8 +490,8 @@ $_smarty_tpl->tpl_vars['testimonial']->_loop = true;
                                 <p class="bottom40"><?php echo $_smarty_tpl->tpl_vars['testimonial']->value->getDescription();?>
 </p>
                             </div>
-                            <div class="testimonial-photo"><img alt="" src="<?php echo $_smarty_tpl->getConfigVariable('IMAGE_PATH');?>
-testimonial-2.jpg"></div>
+                            <div class="testimonial-photo"><img alt="" src="<?php echo $_smarty_tpl->tpl_vars['testimonial']->value->getPictureUrl();?>
+"></div>
                             <h6 class="text-blackish alt-font no-margin"><?php echo $_smarty_tpl->tpl_vars['testimonial']->value->getName();?>
 </h6>
                             
@@ -371,6 +507,20 @@ testimonial-2.jpg"></div>
 </section>
 <!--ends of clients testimonial -->
 
+<!--video Parallax-->
+<section class="bg-video-parallax parallax padding">
+    <div class="container text-center center-block">
+        <div class="row wow fadeIn">
+            <div class="col-sm-1 col-md-2"></div>
+            <div class="col-sm-10 col-md-8">
+                <h2 class="alt-font text-white">"If you work just for money, you'll never make it, but if you love what you're doing and you always put the customer first, success will be yours."<br> Ray Kroc</h2>
+
+            </div>
+            <div class="col-sm-1 col-md-2"></div>
+        </div>
+    </div>
+</section>
+<!--video Parallax Ends-->
 
 <!-- Partners -->
 <section id="logos">
@@ -453,13 +603,13 @@ blog-1.jpg" class="equalheight">
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-group">
-                                <input class="form-control" type="email" placeholder="Email:" required id="email"
+                                <input class="form-control" type="email_contact" placeholder="Email:" required id="email"
                                     name="email">
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-group ">
-                                <input class="form-control" type="tel" placeholder="Phone:" id="phone" name="phone">
+                                <input class="form-control" type="tel" placeholder="Phone:" id="phone" name="tel">
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12">

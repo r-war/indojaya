@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2019-05-21 12:00:57
+<?php /* Smarty version Smarty-3.1.8, created on 2019-05-25 08:57:42
          compiled from "templates/www/default\core\footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:74685cdd0c26ecb4c1-21775314%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2f3be00f86b234f2a1c31c1d8b7348380bd1af5a' => 
     array (
       0 => 'templates/www/default\\core\\footer.tpl',
-      1 => 1558414854,
+      1 => 1558749064,
       2 => 'file',
     ),
   ),
@@ -93,8 +93,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <script src="<?php echo $_smarty_tpl->getConfigVariable('JS_PATH');?>
 /matchheight.js"></script>
 
-
-
+    <script src="<?php echo $_smarty_tpl->getConfigVariable('JS_PATH');?>
+/isotope.pkgd.min.js"></script>
 
 
     <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->

@@ -1,0 +1,22 @@
+May 21 15:07:31 DefaultModule [error] Syntax Error in template "templates/www/default\DefaultModule.tpl"  on line 493 "&lt;div class=&quot;cbp-item {gallery-&gt;getCode()}&quot;&gt;"  - Unexpected "(", expected one of: "}" , " "
+===================
+Server Addr: 127.0.0.1
+Server Host: itconcept.cms
+Remote Addr: 127.0.0.1
+Browser: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36
+===================
+#0 C:\xampp5\htdocs\itconcept\classes\smarty\sysplugins\smarty_internal_templateparser.php(3154): Smarty_Internal_TemplateCompilerBase->trigger_template_error()
+#1 C:\xampp5\htdocs\itconcept\classes\smarty\sysplugins\smarty_internal_templateparser.php(3219): Smarty_Internal_Templateparser->yy_syntax_error(37, '(')
+#2 C:\xampp5\htdocs\itconcept\classes\smarty\sysplugins\smarty_internal_smartytemplatecompiler.php(105): Smarty_Internal_Templateparser->doParse(37, '(')
+#3 C:\xampp5\htdocs\itconcept\classes\smarty\sysplugins\smarty_internal_templatecompilerbase.php(171): Smarty_Internal_SmartyTemplateCompiler->doCompile('<!--# content #...')
+#4 C:\xampp5\htdocs\itconcept\classes\smarty\sysplugins\smarty_internal_template.php(187): Smarty_Internal_TemplateCompilerBase->compileTemplate(Object(Smarty_Internal_Template))
+#5 C:\xampp5\htdocs\itconcept\classes\smarty\sysplugins\smarty_internal_templatebase.php(164): Smarty_Internal_Template->compileTemplateSource()
+#6 C:\xampp5\htdocs\itconcept\classes\smarty\sysplugins\smarty_internal_template.php(285): Smarty_Internal_TemplateBase->fetch(NULL, NULL, NULL, NULL, false, false, true)
+#7 C:\xampp5\htdocs\itconcept\templates_c\www\default\a93eb856d51fe41f95addc301c9fbd21debfb028.file.default.tpl.php(33): Smarty_Internal_Template->getSubTemplate('DefaultModule.t...', NULL, NULL, NULL, NULL, Array, 0)
+#8 C:\xampp5\htdocs\itconcept\classes\smarty\sysplugins\smarty_internal_templatebase.php(180): content_5cdd0c26cd7455_49223709(Object(Smarty_Internal_Template))
+#9 C:\xampp5\htdocs\itconcept\classes\smarty\sysplugins\smarty_internal_templatebase.php(374): Smarty_Internal_TemplateBase->fetch('layout/default....', NULL, NULL, NULL, true)
+#10 C:\xampp5\htdocs\itconcept\classes\core\Application.php(388): Smarty_Internal_TemplateBase->display('layout/default....')
+#11 C:\xampp5\htdocs\itconcept\classes\core\Application.php(308): Application->executeModule(Object(DefaultModule))
+#12 C:\xampp5\htdocs\itconcept\index.php(10): Application->process()
+#13 {main}
+******************************************************

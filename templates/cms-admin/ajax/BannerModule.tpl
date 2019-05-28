@@ -36,19 +36,19 @@
 		       	</span>
 		     </div>
 		   </div>
+           {*
 		   <div class="control-group">
 		     <label class="control-label">{loc k=url}</label>
 		     <div class="controls">
 		       <input type="text" class="span12" name="oBanner-url" value="{$oBanner->getUrl()}" />
-           {*
 	       		<input type="hidden" name="oBanner-new_tab" value="0" />
 		       <label class="checkbox help-inline" style="padding-left: 25px;">
 					<input type="checkbox" name="oBanner-new_tab" value="true" {if $oBanner->getNewTab()}checked="checked"{/if}> {loc k=open_in_new_tab}
 				</label>
-           *}
 		     </div>
 		   </div>
-		   {*
+           *}
+		   
 			<div class="control-group">
 		     <label class="control-label">{loc k=name}</label>
 		     <div class="controls">
@@ -56,6 +56,7 @@
 		     </div>
 		   </div>
 		   <div class="control-group">
+		   	{*
 		     <label class="control-label">{loc k=description}</label>
 		     <div class="controls">
 		     	<input type="text" name="oBanner-description" value="{$oBanner->getDescription()}" class="span12"/>

@@ -8,7 +8,7 @@
                         <table cellpadding="5" cellspacing="0" border="0" width="100%">
                             <tr>
                                 <td>
-                                    <a href="{$oMod->getBaseDomain()}" target="_blank"><img src="http://innergy.itc2.clientsdemo.net/contents/images/{$aConfig.web_logo}"  style="max-width:300px; max-height:100px" border="0"/></a>
+                                    <a href="{$oMod->getBaseDomain()}" target="_blank"><img src="{$oMod->getBaseDomain()}/contents/images/{$aConfig.web_logo}"  style="max-width:300px; max-height:100px" border="0"/></a>
                                 </td>
                                 <td style="vertical-align: baseline; text-align: right;">
                                 </td>
@@ -18,32 +18,17 @@
                 </tr>
                 <tr>
                     <td style="border-width: 0px 0px 1px 0px;border-color: #BED1BD;border-style: solid;">
-				<table width="100%" cellpadding="5">
-					<tbody>
-						<tr>
-							<th width="30%" align="right">Full Name:</th>
-							<td width="70%">{$data->fullname}</td>
-						</tr>
-						<tr>
-							<th align="right">Email:</th>
-							<td>{$data->mailaddr}</td>
-						</tr>
-						<tr>
-							<th align="right">Subject:</th>
-							<td>{$data->subjects}</td>
-						</tr>
-                        {if isset($data->type)}
+                <table width="100%" cellpadding="5">
+                    <tbody>
+                        {foreach from=$data item=sValue key=sName}
                         <tr>
-                            <th align="right">Message Type:</th>
-                            <td>{$data->type}</td>
+                            <td width="30%" valign="top">{$sName}</td>
+                            <td width="5%" valign="top">:</td>
+                            <td>{$sValue|@nl2br}</td>
                         </tr>
-                        {/if}
-						<tr>
-							<th align="right">Notes:</th>
-							<td>{$data->messages}</td>
-						</tr>
-					</tbody>
-				</table>
+                    {/foreach}
+                    </tbody>
+                </table>
                     </td>
                 </tr>
                 <tr>

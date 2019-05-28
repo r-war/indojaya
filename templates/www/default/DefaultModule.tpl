@@ -81,7 +81,30 @@
                     <!-- MAIN IMAGE -->
                     <img src="{$banner->getPictureUrl()}" alt="" data-bgposition="center center" data-bgfit="cover"
                         data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina>
-
+{*
+                    <div class="tp-caption tp-resizeme" id="slide-28-layer-1"
+             
+                        data-x="['49','49','40','49']"
+                        data-y="['460','460','460','400']"
+                        data-width="['700','500','500','350']"
+                        data-height="['auto']"
+                        data-transform_idle="o:1;"
+                        data-transform_in="opacity:0;s:300;e:Power2.easeInOut;"
+                        data-transform_out="opacity:0;s:300;s:300;"
+                        data-start="500"
+                        data-splitin="none"
+                        data-splitout="none"
+                        data-responsive_offset="on"
+                        style="z-index: 5;
+                               min-width: 200px;
+                               max-width: 500px;
+                               white-space: normal;
+                               font-size: 26px;
+                               line-height: 32px;
+                               font-weight: 400;">
+                            <p class="text-capitalize alt-font text-blackish font-weight-800">{$banner->getName()}</p>
+                    </div>
+*}
                 </li>
 
                 {/foreach}
@@ -94,23 +117,26 @@
                     data-frames='[{"delay": 500, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, 
                                     {"delay": "wait", "speed": 300, "to": "opacity: 0"}]' {/literal} data-x="center"
                     data-y="center" data-hoffset="0" data-voffset="0" data-width="['auto']" data-height="['auto']">
-                    <form method="post" class="contact">
+                    {include file='core/feedback.tpl'}
+                    <form method="post" class="contact" id="quotes">
                         <div class="contact-step-1">
-                            <div class="form-inline">
+                            <h3 class="text-capitalize text-center font-weight-600 alt-font text-blackish">Free SEO Quote </h3>
+                            <div class="form-inline bg-white-p5">
                                 <div class="form-group">
-                                    <input type="text" name="website" placeholder="&#xf57d; Enter Your Website"
-                                        class="form-control fontAwesome">
+                                    <input type="text" name="website" placeholder='&#xf0ac; Enter Your Website'
+                                        class="form-control fontAwesome hide-border mb-16px">
                                 </div>
-                                <a class="btn btn-blue" onclick="goNextStep()">Get Your Free Quote</a>
+                                <a class="btn btn-blue" id="nextStep" onclick="goNextStep()">Get Your Free Quote</a>
                             </div>
                         </div>
                         <div class="contact-step-2">
+                            <h3 class="text-capitalize text-center font-weight-600 alt-font text-blackish">Enter Your Detail</h3>
                             <div class="form-group">
-                                <input type="text" name="name" placeholder="Name" class="form-control">
-                                <input type="text" name="email" placeholder="Email" class="form-control">
-                                <input type="text" name="phone" placeholder="Phone" class="form-control">
+                                <input type="text" name='&#xf406; Name' placeholder="Name" class="form-control">
+                                <input type="text" name='&#xf02b; Email' placeholder="Email" class="form-control">
+                                <input type="text" name='&#xf3cd; Phone' placeholder="Phone" class="form-control">
                             </div>
-                            <button name="submit" class="btn btn-green-blue">Quote</button>
+                            <button name="quote" class="btn btn-green-blue">Quote</button>
                         </div>
                     </form>
 
@@ -126,21 +152,23 @@
 
 <!-- four boxes-->
 <section class="no-padding" id="services">
-    <div class="swiper-container container" id="services">
-        <div class="swiper-wrapper">
-            {foreach $services as $service}
-            <div class="swiper-slide textarea">
-                <div class="row text-center">
-                    <div class="col-md-12">
-                        <div class="icon-holder"><i class="{$service->getShortDescription()}"></i></div>
-                        <h4>{$service->getName()}</h4>
-                        {$service->getDescription()}
-                    </div>
+    <div class="row"> 
+        {foreach $services as $key=>$service}
+            <div class="col-md-6 col-sm-6 no-padding">
+                <div class="four-boxes center-block text-blackish text-center {if ($key+1)%3==1||$key%3==1&&$key!==1}bg-sky-blue text-white{/if} padding-140px-tb padding-30px-lr wow fadeIn">
+
+                    <h3 class="text-capitalize font-weight-100 alt-font no-margin-bottom">{$service->getName()}</h3>
+
+                    <p
+                        class="text-center margin-20px-lr text-medium width-70 text-medium-gray main-font margin-30px-top xs-margin-20px-top">
+                        {$service->getDescription()}</p>
+                    <a href="#portfolio"
+                        class="scroll btn btn-blackish font-weight-600 alt-font btn-rounded btn-large margin-20px-top">Browse
+                        Work</a>
+
                 </div>
             </div>
-            {/foreach}
-        </div>
-        <div class="swiper-pagination"></div>
+        {/foreach}
     </div>
     {*
     <div class="row">
@@ -211,7 +239,7 @@
     *}
 </section>
 <!--  end of box section -->
-{*
+
 <!-- start counters-->
 <section id="counters" class="demo-banner">
 
@@ -219,8 +247,7 @@
 
         <div class="text-left counters-heading margin-80px-bottom xs-margin-50px-bottom">
             <h2 class="text-blackish alt-font font-weight-100 no-margin">Statistical Numbers</h2>
-            <p class="text-extra-dark-gray text-medium xs-margin-20px-top no-margin">Curabitur mollis bibendum luctus
-                duis suscipit vitae dui se bibendum.</p>
+
         </div>
 
 
@@ -256,7 +283,7 @@
 
 </section>
 <!-- Ends counters -->
-*}
+
 <!-- team section -->
 <section class="bg-extreme-light-gray" id="team">
 
@@ -264,7 +291,7 @@
 
         <div class="row text-center team-text">
 
-            <h2 class="text-blackish alt-font font-weight-300">Creative Team</h2>
+            <h2 class="text-blackish alt-font font-weight-300">Our Team</h2>
             <p
                 class="xs-margin-20px-lr xs-no-margin-bottom margin-80px-bottom text-medium text-center text-medium-gray">
                 Sebagai team profesional muda, kami bekerja dengan mengoptimalkan konsep dan content terbaik yang
@@ -458,21 +485,19 @@
     </div>
 </section>
 <!--Parallax Ends-->
-{*
+
 <!-- Portfolio Starts -->
 <section id="portfolio">
 
     <div class="container">
         <div class="row">
             <div class="wow fadeIn text-center">
-                <h2 class="text-blackish alt-font font-weight-100"> Creative Work</h2>
-                <p class="main-font text-medium-gray margin-80px-bottom text-medium xs-margin-20px-lr">Curabitur mollis
-                    bibendum luctus duis suscipit vitae dui se bibendum.</p>
+                <h2 class="text-blackish alt-font font-weight-100">Portofolio</h2>
             </div>
         </div>
         <div class="row">
             <div id="js-filters-mosaic-flat" class="text-center xs-no-margin-top cbp-l-filters-buttonCenter">
-                <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">
+                <div data-filter="*" class="cbp-filter-item">
                     All
                     <div class="cbp-filter-counter"></div>
 
@@ -480,28 +505,41 @@
 
                 <span class="text-blue">/</span>
 
+                {foreach $gallery as $category}
+                <div data-filter=".{$category->getCode()}" class="{if $category->getCode() =='website'}cbp-filter-item cbp-filter-item-active{else}cbp-filter-item{/if}">
+                    {$category->getName()}
+                    <div class="cbp-filter-counter"></div>
+                </div>
+                <span class="text-blue">/</span>
+                {/foreach}
 
-                <div data-filter=".print" class="cbp-filter-item">
-                    Graphic Design
-                    <div class="cbp-filter-counter"></div>
-                </div>
-                <span class="text-blue">/</span>
-                <div data-filter=".web-design" class="cbp-filter-item">
-                    Web design
-                    <div class="cbp-filter-counter"></div>
-                </div>
-                <span class="text-blue">/</span>
-                <div data-filter=".graphic" class="cbp-filter-item">
-                    SEO
-                    <div class="cbp-filter-counter"></div>
-                </div>
-                <span class="text-blue">/</span>
-                <div data-filter=".motion" class="cbp-filter-item">
-                    Marketing
-                    <div class="cbp-filter-counter"></div>
-                </div>
             </div>
             <div id="js-grid-mosaic-flat" class="cbp cbp-l-grid-mosaic-flat">
+                {foreach $gallery as $gall}
+                    {foreach from=$gall->getPictures()  item=i name=galleryImage}
+                        <div class="cbp-item {$gall->getCode()}">
+                            <div class="cbp-caption">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="{$i->getPictureUrl()}" alt="project">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignCenter">
+                                        <div class="cbp-l-caption-body">
+                                            <a href="{$i->getPictureUrl()}" class="cbp-lightbox">
+                                                <div class="cbp-l-caption-title">{$i->getName()}</div>
+                                                <div class="line-bar">
+                                                    <hr>
+                                                </div>
+                                                <p class="brand-graphic alt-font">{$i->getDescription()}</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>        
+                    {/foreach}
+                {/foreach}
+                {*
                 <div class="cbp-item web-design graphic ">
                     <div class="cbp-caption">
                         <div class="cbp-caption-defaultWrap">
@@ -670,7 +708,9 @@
                         </div>
                     </div>
                 </div>
+                *}
             </div>
+            {*
             <div id="js-loadMore-mosaic-flat" class="cbp-l-loadMore-bgbutton">
                 <a href="ajax-mosaic-flat/loadMore.html" class="cbp-l-loadMore-link no-transition" rel="nofollow">
                     <span class="cbp-l-loadMore-defaultText no-transition ">Load More</span>
@@ -678,11 +718,13 @@
                     <span class="cbp-l-loadMore-noMoreLoading">Finish</span>
                 </a>
             </div>
+            *}
         </div>
     </div>
 
 </section>
 <!-- Portfolio ends -->
+{*
 <!-- pricing section -->
 <section class="bg-extreme-light-gray" id="packages">
     <div class="container">
@@ -823,7 +865,7 @@
                             <div class="testimonial-text">
                                 <p class="bottom40">{$testimonial->getDescription()}</p>
                             </div>
-                            <div class="testimonial-photo"><img alt="" src="{#IMAGE_PATH#}testimonial-2.jpg"></div>
+                            <div class="testimonial-photo"><img alt="" src="{$testimonial->getPictureUrl()}"></div>
                             <h6 class="text-blackish alt-font no-margin">{$testimonial->getName()}</h6>
                             {*<p class="main-font text-medium xs-no-margin-bottom">Businessman</p>*}
                         </div>
@@ -838,6 +880,20 @@
 </section>
 <!--ends of clients testimonial -->
 
+<!--video Parallax-->
+<section class="bg-video-parallax parallax padding">
+    <div class="container text-center center-block">
+        <div class="row wow fadeIn">
+            <div class="col-sm-1 col-md-2"></div>
+            <div class="col-sm-10 col-md-8">
+                <h2 class="alt-font text-white">"If you work just for money, you'll never make it, but if you love what you're doing and you always put the customer first, success will be yours."<br> Ray Kroc</h2>
+
+            </div>
+            <div class="col-sm-1 col-md-2"></div>
+        </div>
+    </div>
+</section>
+<!--video Parallax Ends-->
 
 <!-- Partners -->
 <section id="logos">
@@ -918,13 +974,13 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-group">
-                                <input class="form-control" type="email" placeholder="Email:" required id="email"
+                                <input class="form-control" type="email_contact" placeholder="Email:" required id="email"
                                     name="email">
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-group ">
-                                <input class="form-control" type="tel" placeholder="Phone:" id="phone" name="phone">
+                                <input class="form-control" type="tel" placeholder="Phone:" id="phone" name="tel">
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12">

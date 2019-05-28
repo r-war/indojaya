@@ -666,7 +666,7 @@ abstract class BaseNewsPeer {
 	 */
 	public static function retrieveByPK($pk, PropelPDO $con = null)
 	{
-		if($pk != null)
+		if($pk != null)
 		{
 			if (null !== ($obj = NewsPeer::getInstanceFromPool((string) $pk))) {
 				return $obj;
@@ -681,7 +681,7 @@ abstract class BaseNewsPeer {
 	
 			$v = NewsPeer::doSelect($criteria, $con);
 	
-			return !empty($v) > 0 ? $v[0] : null;
+			return !empty($v) > 0 ? $v[0] : null;
 		}
 	}
 
@@ -709,40 +709,40 @@ abstract class BaseNewsPeer {
 		}
 		return $objs;
 	}
-
-	static function getList(Criteria $_oCrit = null, Sortable $_oSortable = null,$_iPage = -1, &$_oPager = null,$_iRows = null, PropelPDO $con=null )
-	{
-		if($_oSortable instanceof Sortable)
-		{
-			if($_oSortable->isAscending())
-			{
-				$_oCrit->clearOrderByColumns();
-				$_oCrit->addAscendingOrderByColumn($_oSortable->getSortField());
-			}
-			else if($_oSortable->isDescending())
-			{
-				$_oCrit->clearOrderByColumns();
-				$_oCrit->addDescendingOrderByColumn($_oSortable->getSortField());
-			}
-		}
-	
-		if($_iPage != -1)
-		{
-			$_oPager = new PropelPager(
-				$_oCrit, 
-				'NewsPeer', 
-				'doSelect', 
-				$_iPage, 
-				$_iRows,
-				$con
-			);
-			
-			return $_oPager->getResult();
-		}
-		else
-		{
-			return self::doSelect($_oCrit, $con);
-		}
+
+	static function getList(Criteria $_oCrit = null, Sortable $_oSortable = null,$_iPage = -1, &$_oPager = null,$_iRows = null, PropelPDO $con=null )
+	{
+		if($_oSortable instanceof Sortable)
+		{
+			if($_oSortable->isAscending())
+			{
+				$_oCrit->clearOrderByColumns();
+				$_oCrit->addAscendingOrderByColumn($_oSortable->getSortField());
+			}
+			else if($_oSortable->isDescending())
+			{
+				$_oCrit->clearOrderByColumns();
+				$_oCrit->addDescendingOrderByColumn($_oSortable->getSortField());
+			}
+		}
+	
+		if($_iPage != -1)
+		{
+			$_oPager = new PropelPager(
+				$_oCrit, 
+				'NewsPeer', 
+				'doSelect', 
+				$_iPage, 
+				$_iRows,
+				$con
+			);
+			
+			return $_oPager->getResult();
+		}
+		else
+		{
+			return self::doSelect($_oCrit, $con);
+		}
 	}
 	static function extList(Criteria $oCrit, $iStart=0, $iLimit=-1, $sSort=null, $sDir=null, PropelPDO $con=null )
 	{

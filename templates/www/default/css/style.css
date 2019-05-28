@@ -587,7 +587,7 @@ position: fixed;
     position: absolute;
     float: right;
     right: 15px;
-    bottom: 21px;
+    bottom: 30px;
 }
 header nav .nav-header{  vertical-align: middle;
     position: relative;}
@@ -928,7 +928,7 @@ header nav .nav-header{  vertical-align: middle;
 }
 /* counters */
 .fitness-parallax1 {
-    background: url(../img/fitness-parallax1.jpg) no-repeat;
+    background: url(../images/fitness-parallax1.jpg) no-repeat;
     background-attachment: fixed;
     -webkit-background-size: cover;
     background-size: cover;
@@ -936,7 +936,7 @@ header nav .nav-header{  vertical-align: middle;
     width: 100%;
 }
 .bit-banner {
-    background: url(../img/bg-bit-coin.jpg) no-repeat;
+    background: url(../images/bg-bit-coin.jpg) no-repeat;
     background-attachment: fixed;
     -webkit-background-size: cover;
     background-size: cover;
@@ -1293,7 +1293,7 @@ element.style {
 
 
 .parallax-bg{
-    background: url("../img/bg-paralax.jpg") no-repeat;
+    background: url("../../images/bg-paralax.jpg") no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
@@ -2068,13 +2068,13 @@ color: #FFFFFF;
 
 /*--- parallax video --*/
 
-.bg-video-parallax {background: url(../img/video-img.jpg) no-repeat;
+.bg-video-parallax {background: url(../../images/video-img.jpg) no-repeat;
     background-attachment: fixed;
     background-size: cover;}
-.bg-video-parallax-index-4 {background: url(../img/video-img-index-4.jpg) no-repeat;
+.bg-video-parallax-index-4 {background: url(../../images/video-img-index-4.jpg) no-repeat;
     background-attachment: fixed;
     background-size: cover;}
-.bg-video-parallax-index-7 {background: url(../img/video-img-index-7.jpg) no-repeat;
+.bg-video-parallax-index-7 {background: url(../../images/video-img-index-7.jpg) no-repeat;
     background-attachment: fixed;
     background-size: cover;}
 /*-------------------------------*/
@@ -3138,7 +3138,7 @@ svg {
     }
 
 
-    .four-boxes { padding: 50px 0;}
+    .four-boxes { padding: 50px 30px;}
 
     .progress-title {
         font-size: 10px;text-align: center ;
@@ -3186,17 +3186,17 @@ svg {
 }
 
 .logo img {
-    max-width: 250px;
-    margin-top: 10px;
+    max-width: 300px;
+    margin-top: 0px;
 }
 
 .contact input{
     height: 40px;
-    width: 300px;
+    width: 450px !important;
 }
 
-.fontAwesome{
-    font-family: 'Arial', fontAwesome;
+textarea, input{
+    font-family: fontAwesome, 'Open Sans', sans-serif !important;
 }
 
 .contact-step-2{
@@ -3209,11 +3209,11 @@ svg {
 .hideForm{
     display: none;
 }
-#services{
+/*#services{
     padding-top: 50px;
     padding-bottom: 50px;
     height: 600px;
-}
+}*/
 .icon-holder {
   background-color: #24c4f4;
   width: 98px;
@@ -3230,4 +3230,36 @@ svg {
     .map{
         padding-bottom: 35.25% !important;
     }
+    .bg-white-p5{
+        background-color: #FFF;
+        padding: 5px;
+    }
+}
+
+.hide-border{
+    border: 0px solid #FFFFFF;
+
+}
+
+@media screen and (max-width: 767px) {
+    .mb-16px{
+        margin-bottom: 16px;
+    }
+    .header-appear .sidemenu_btn{
+        bottom: 30px !important;
+    }
+    .logo .logo-dark, .logo img{
+        max-width: 250px !important;
+    }
+    .sidemenu_btn {
+        bottom: 20px !important;
+    }
+    .contact input{
+        height: 40px;
+        width: 250px !important;
+    }
+}
+
+.text-center{
+    text-align: center !important;
 }

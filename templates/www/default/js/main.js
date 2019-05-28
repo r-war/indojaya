@@ -10,6 +10,13 @@ jQuery(window).on("load", function () {
 
     });
 
+$(document).on('keyup keypress', 'form input[type="text"]', function(e) {
+  if(e.keyCode == 13) {
+    e.preventDefault();
+    return false;
+  }
+});
+
     function goNextStep(e){
         $('.contact-step-2').addClass('showForm');
         $('.contact-step-1').addClass('hideForm');
@@ -39,6 +46,7 @@ jQuery(function ($) {
 
     var $gallery = $('.gallery').isotope({
         // options
+        filter: '.website'
     });
 
 
@@ -223,7 +231,7 @@ jQuery(function ($) {
         $('#js-grid-mosaic-flat').cubeportfolio({
             filters: '#js-filters-mosaic-flat',
             layoutMode: 'mosaic',
-            defaultFilter: '*',
+            defaultFilter: '.website',
             animationType: 'fadeOutTop',
             gapHorizontal: 0,
             gapVertical: 0,
@@ -267,7 +275,7 @@ jQuery(function ($) {
             .on('initComplete.cbp', function () {
                 // your functionality
                 var $this = $(this);
-                if ($(".cbp-filter-item-active").attr("data-filter") === "*") {
+                if ($(".cbp-filter-item-active").attr("data-filter") === ".website") {
                     $("#js-loadMore-mosaic-flat").addClass("active");
                 } else {
                     $("#js-loadMore-mosaic-flat").removeClass("active");
@@ -300,7 +308,7 @@ jQuery(function ($) {
             .on('filterComplete.cbp', function () {
                 // your functionality
                 var $this = $(this);
-                if ($(".cbp-filter-item-active").attr("data-filter") === "*") {
+                if ($(".cbp-filter-item-active").attr("data-filter") === ".website") {
                     $("#js-loadMore-mosaic-flat").addClass("active");
                     $("#js-loadMore-mosaic-flat").removeClass("d-none");
                 } else {

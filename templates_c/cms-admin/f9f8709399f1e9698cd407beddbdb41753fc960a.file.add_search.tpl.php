@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2019-05-20 10:51:03
+<?php /* Smarty version Smarty-3.1.8, created on 2019-05-25 10:19:36
          compiled from "templates/cms-admin\core\add_search.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:153175ce22427b2a8a8-80409097%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f9f8709399f1e9698cd407beddbdb41753fc960a' => 
     array (
       0 => 'templates/cms-admin\\core\\add_search.tpl',
-      1 => 1497348240,
+      1 => 1558749059,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_5ce22427b7c930_43614265',
   'variables' => 
   array (
     'oMod' => 0,
@@ -24,8 +26,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'oParam' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5ce22427b7c930_43614265',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5ce22427b7c930_43614265')) {function content_5ce22427b7c930_43614265($_smarty_tpl) {?><?php if (!is_callable('smarty_function_loc')) include 'C:\\xampp5\\htdocs\\itconcept\\classes\\smarty\\plugins\\function.loc.php';
 ?><form action="<?php echo $_smarty_tpl->tpl_vars['oMod']->value->getPage($_smarty_tpl->tpl_vars['oMod']->value->getModule());?>

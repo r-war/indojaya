@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2019-05-20 10:51:05
+<?php /* Smarty version Smarty-3.1.8, created on 2019-05-21 20:18:30
          compiled from "templates/cms-admin\ajax\BannerModule.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:165665ce2242953b5e1-64402940%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ddde6d2ead8cbcbc029043204366867a61e112ec' => 
     array (
       0 => 'templates/cms-admin\\ajax\\BannerModule.tpl',
-      1 => 1497348240,
+      1 => 1558444707,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_5ce224295db898_05072088',
   'variables' => 
   array (
     'sAjax' => 0,
@@ -23,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'sUri' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5ce224295db898_05072088',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5ce224295db898_05072088')) {function content_5ce224295db898_05072088($_smarty_tpl) {?><?php if (!is_callable('smarty_function_loc')) include 'C:\\xampp5\\htdocs\\itconcept\\classes\\smarty\\plugins\\function.loc.php';
 if (!is_callable('smarty_function_val')) include 'C:\\xampp5\\htdocs\\itconcept\\classes\\smarty\\plugins\\function.val.php';
@@ -76,16 +76,18 @@ if (!is_callable('smarty_function_val')) include 'C:\\xampp5\\htdocs\\itconcept\
 		       	</span>
 		     </div>
 		   </div>
-		   <div class="control-group">
-		     <label class="control-label"><?php echo smarty_function_loc(array('k'=>'url'),$_smarty_tpl);?>
+           
+		   
+			<div class="control-group">
+		     <label class="control-label"><?php echo smarty_function_loc(array('k'=>'name'),$_smarty_tpl);?>
 </label>
 		     <div class="controls">
-		       <input type="text" class="span12" name="oBanner-url" value="<?php echo $_smarty_tpl->tpl_vars['oBanner']->value->getUrl();?>
-" />
-           
+		       <input type="text" name="oBanner-name" value="<?php echo $_smarty_tpl->tpl_vars['oBanner']->value->getName();?>
+" class="span12"/>
 		     </div>
 		   </div>
-		   
+		   <div class="control-group">
+		   	
 		   <div class="clearfix"></div>
 		</div>
 	</div>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<database 
-	name="database"
-	defaultIdMethod="native"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="xsd/database.xsd">
-	
+<database 
+	name="database"
+	defaultIdMethod="native"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="xsd/database.xsd">
+	
 	<table name="subscriber">
 		<column
 			name="id"
@@ -48,6 +48,6 @@
 				class="propel.validator.EmailValidator"
 				message="invalid-email" />	
 		</validator>
-	</table>
+	</table>
 		
 </database>

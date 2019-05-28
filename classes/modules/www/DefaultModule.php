@@ -16,9 +16,14 @@ class DefaultModule extends AbstractCommonModule
 		$this->doSubscribe();
 		$this->handleConsults();
 
-		if (!empty($_POST['contact']))
+		if (!empty($_POST['quote']))
+			$this->doQuotes();
+
+		if(!empty($_POST['submit']))
 			$this->contactUs();
 
+		//$post 	= $_POST;
+		//dump($post);
 		$param = null;
 
 		$view = [
@@ -28,10 +33,77 @@ class DefaultModule extends AbstractCommonModule
 			'teams' 			=> TeamPeer::getAll(),
 			"banners" 			=> BannerPeer::getByGroup("sliding"),
 			"clients" 			=> BannerPeer::getByGroup("client"),
+			'gallery' 			=> GalleryPeer::getByParent(),
 			"source"			=> 'Default'
 		];
 
 		$this->aContext += $view;
+	}
+
+	public function doQuotes(){
+		$post 	= $_POST;
+		$error 	= false;
+
+		$maildata 			= new stdClass();
+		$maildata->website 	= $post['website'];
+		$maildata->name 	= $post['name'];
+		$maildata->email 	= $post['email'];
+		$maildata->phone 	= $post['phone'];
+
+		$mailfrom = array(
+				$this->aConfig['email_from'],
+				$this->aConfig['web_title']
+			);
+
+		#set mail to
+		$recipients   = array();
+
+		//$recipients[] = array ($mailaddr, $mailaddr);
+		$replyto = array ($mailaddr, $mailaddr);
+
+		$bcc_mails = explode( ",", $this->aConfig['email_enquiry'] );
+		foreach ( $bcc_mails as $bcc )
+		{
+			$recipients[] = array( $bcc, $bcc );
+		}
+
+		#set subject
+		$subject = "Quotes from " . $maildata->email;
+
+		#set template used
+		$template = "contact.tpl";
+
+		#assign values
+		$vars = array(
+			'oMod'  	=> $this,
+			'aConfig' 	=> $this->aConfig,
+			'data'  	=> $maildata,
+		);
+
+		#mail type
+		$mail_type = 'text/html';
+
+		#mail smtp
+		$smtp['host']     = $this->aConfig['smtp_host'];
+		$smtp['username'] = $this->aConfig['smtp_user'];
+		$smtp['password'] = $this->aConfig['smtp_password'];
+		$smtp['port']     = $this->aConfig['smtp_port'];
+
+		if ($smtp['host'] == 'smtp.gmail.com')
+			$smtp['isgmail'] = true;
+
+		#send email
+		$mail = $this->sendMail( $mailfrom, $recipients, $subject, $template, $vars, $mail_type, null, $replyto, $smtp );
+
+		if ( $mail )
+		{
+			$this->info( 'Your message are successfully sent' );
+		}
+		else
+		{
+			$this->error( "There's a problem when sending your message, please try it again later." );
+		}
+
 	}
 
 	private function getServices()
@@ -138,111 +210,67 @@ class DefaultModule extends AbstractCommonModule
 
 	public function contactUs()
 	{
-		$fullname   = $_POST['fullname'];
-		$mailaddr   = $_POST['email'];
-		$subjects   = $_POST['subject'];
-		$messages   = $_POST['message'];
-		$captcha    = $_POST['g-recaptcha-response'];
-		$error = false;
 
-		if ( empty($fullname) || empty($subjects) || empty($mailaddr) || empty($messages) || empty($captcha) ) {
-			$error = true;
-			$this->error('All fields are mandatory');
-		}
-		else {
+		# set mail data
+		$maildata = new stdClass();
+		$maildata->fullname   	= $_POST['first_name'] + ' ' + $_POST['last_name'];
+		$maildata->email   		= $_POST['email_contact'];
+		$maildata->phone   		= $_POST['tel'];
+		$maildata->message   	= $_POST['message'];
 
-			if ( strlen($fullname) < 3 ) {
-				$error = true;
-				$this->error('Fullname needs minimum 3 characters');
-			}
+		#set mail from
+		$mailfrom = array(
+			$this->aConfig['email_from'],
+			$this->aConfig['web_title']
+		);
 
-			if ( ! Validator::email()->validate($mailaddr) ) {
-				$error = true;
-				$this->error('Wrong email format');
-			}
+		#set mail to
+		$recipients   = array();
 
-			# validate google recaptcha
-			$client = new Client([
-				'verify' => false
-			]);
+		$recipients[] = array ($maildata->email  , $maildata->email );
+		$replyto = array ($maildata->email, $maildata->email);
 
-			$response = $client->post('https://www.google.com/recaptcha/api/siteverify', [
-				'form_params' => [
-				  'secret' => '6LdykDQUAAAAACPzItFAAjxrl4lm5dBCY4IF0PB3',
-				  'response' => $captcha
-				]
-			]);
-
-			$item = json_decode($response->getBody());
-			if ( !$item->success ) {
-				$error = true;
-				$this->error('Captcha verification failed');
-			}
+		$bcc_mails = explode( ",", $this->aConfig['email_enquiry'] );
+		foreach ( $bcc_mails as $bcc )
+		{
+			$recipients[] = array( $bcc, $bcc );
 		}
 
-		if (!$error) {
+		#set subject
+		$subject = "Contact from " . $maildata->email;
 
-			# set mail data
-			$maildata = new stdClass();
-			$maildata->fullname   = $fullname;
-			$maildata->mailaddr   = $mailaddr;
-			$maildata->subjects   = $subjects;
-			$maildata->messages   = $messages;
+		#set template used
+		$template = "contact.tpl";
 
-			#set mail from
-			$mailfrom = array(
-				$this->aConfig['email_from'],
-				$this->aConfig['web_title']
-			);
+		#assign values
+		$vars = array(
+			'oMod'  	=> $this,
+			'aConfig' 	=> $this->aConfig,
+			'data'  	=> $maildata,
+		);
 
-			#set mail to
-			$recipients   = array();
+		#mail type
+		$mail_type = 'text/html';
 
-			$recipients[] = array ($mailaddr, $mailaddr);
-			$replyto = array ($mailaddr, $mailaddr);
+		#mail smtp
+		$smtp['host']     = $this->aConfig['smtp_host'];
+		$smtp['username'] = $this->aConfig['smtp_user'];
+		$smtp['password'] = $this->aConfig['smtp_password'];
+		$smtp['port']     = $this->aConfig['smtp_port'];
 
-			$bcc_mails = explode( ",", $this->aConfig['email_enquiry'] );
-			foreach ( $bcc_mails as $bcc )
-			{
-				$recipients[] = array( $bcc, $bcc );
-			}
+		if ($smtp['host'] == 'smtp.gmail.com')
+			$smtp['isgmail'] = true;
 
-			#set subject
-			$subject = "Contact from " . $maildata->mailaddr;
+		#send email
+		$mail = $this->sendMail( $mailfrom, $recipients, $subject, $template, $vars, $mail_type, null, $replyto, $smtp );
 
-			#set template used
-			$template = "contact.tpl";
-
-			#assign values
-			$vars = array(
-				'oMod'  	=> $this,
-				'aConfig' 	=> $this->aConfig,
-				'data'  	=> $maildata,
-			);
-
-			#mail type
-			$mail_type = 'text/html';
-
-			#mail smtp
-			$smtp['host']     = $this->aConfig['smtp_host'];
-			$smtp['username'] = $this->aConfig['smtp_user'];
-			$smtp['password'] = $this->aConfig['smtp_password'];
-			$smtp['port']     = $this->aConfig['smtp_port'];
-
-			if ($smtp['host'] == 'smtp.gmail.com')
-				$smtp['isgmail'] = true;
-
-			#send email
-			$mail = $this->sendMail( $mailfrom, $recipients, $subject, $template, $vars, $mail_type, null, $replyto, $smtp );
-
-			if ( $mail )
-			{
-				$this->info( 'Your message are successfully sent' );
-			}
-			else
-			{
-				$this->error( "There's a problem when sending your message, please try it again later." );
-			}
+		if ( $mail )
+		{
+			$this->info( 'Your message are successfully sent' );
+		}
+		else
+		{
+			$this->error( "There's a problem when sending your message, please try it again later." );
 		}
 	}
 

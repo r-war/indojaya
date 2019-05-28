@@ -63,8 +63,9 @@
                 <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs margin-5px-top" aria-hidden="true">
                     <li class="active"><a href="#home" class="scroll">Home</a></li>
                     <li><a href="#services" class="scroll-top">Services</a></li>
-                    <li><a href="#team" class="scroll">Team</a></li>{*
+                    <li><a href="#team" class="scroll">Team</a></li>
                     <li><a href="#portfolio" class="scroll">Portfolio</a></li>
+                    {*
                     <li><a href="#packages" class="scroll">Packages</a></li>
                     *}
                     <li><a href="#our-testimonial" class="scroll">Clients</a></li>
@@ -97,9 +98,11 @@
                         <li class="nav-item">
                             <a class="nav-link scroll" href="#portfolio">Portfolio</a>
                         </li>
+                        {*
                         <li class="nav-item">
                             <a class="nav-link scroll" href="#packages">Packages</a>
                         </li>
+                        *}
                         <li class="nav-item">
                             <a class="nav-link scroll" href="#our-testimonial">Clients</a>
                         </li>
@@ -114,11 +117,23 @@
 
                 <div class="side-footer w-100">
                     <ul class="social-icons-simple white top40">
-                        <li><a href="javascript:void(0)"><i class="fa fa-facebook"></i> </a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-instagram"></i> </a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i> </a></li>
+                      {if $aConfig.facebook_link !=''}
+                        <li><a href="{$aConfig.facebook_link}"><i class="fa fa-facebook"></i> </a> </li>
+                      {/if}
+                      {if $aConfig.twitter_link !=''}
+                        <li><a href="{$aConfig.twitter_link}"><i class="fa fa-twitter"></i> </a> </li>
+                      {/if}
+                      {if $aConfig.linkedin_link !=''}
+                        <li><a href="{$aConfig.linkedin_link}"><i class="fa fa-linkedin"></i> </a> </li>
+                      {/if}
+                      {if $aConfig.instagram_link !=''}
+                        <li><a href="{$aConfig.instagram_link}"><i class="fa fa-instagram"></i> </a> </li>
+                      {/if}
+                      {if $aConfig.mail_link !=''}
+                        <li><a href="{$aConfig.mail_link}"><i class="fa fa-envelope-o"></i> </a> </li>
+                      {/if}
                     </ul>
-                    <p class="whitecolor">&copy; 2018 DigiOne. Made With Love by themesindustry</p>
+                    <p class="whitecolor">{$aConfig.copyright_en}</p>
                 </div>
             </div>
         </div>

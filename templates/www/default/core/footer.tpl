@@ -147,8 +147,7 @@
     <!-- match height -->
     <script src="{#JS_PATH#}/matchheight.js"></script>
 
-
-
+    <script src="{#JS_PATH#}/isotope.pkgd.min.js"></script>
 
 
     <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->

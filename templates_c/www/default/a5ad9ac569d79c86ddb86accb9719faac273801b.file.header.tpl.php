@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2019-05-21 12:11:01
+<?php /* Smarty version Smarty-3.1.8, created on 2019-05-25 08:57:42
          compiled from "templates/www/default\core\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:197695cdd0c26ce6e54-61818989%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a5ad9ac569d79c86ddb86accb9719faac273801b' => 
     array (
       0 => 'templates/www/default\\core\\header.tpl',
-      1 => 1558415459,
+      1 => 1558749064,
       2 => 'file',
     ),
   ),
@@ -112,6 +112,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <li class="active"><a href="#home" class="scroll">Home</a></li>
                     <li><a href="#services" class="scroll-top">Services</a></li>
                     <li><a href="#team" class="scroll">Team</a></li>
+                    <li><a href="#portfolio" class="scroll">Portfolio</a></li>
+                    
                     <li><a href="#our-testimonial" class="scroll">Clients</a></li>
                     <li><a href="#blog" class="scroll-top">Blog</a></li>
                     <li><a href="#contactus" class="scroll">Contact</a></li>
@@ -142,9 +144,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <li class="nav-item">
                             <a class="nav-link scroll" href="#portfolio">Portfolio</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link scroll" href="#packages">Packages</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link scroll" href="#our-testimonial">Clients</a>
                         </li>
@@ -159,11 +159,29 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
                 <div class="side-footer w-100">
                     <ul class="social-icons-simple white top40">
-                        <li><a href="javascript:void(0)"><i class="fa fa-facebook"></i> </a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-instagram"></i> </a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i> </a></li>
+                      <?php if ($_smarty_tpl->tpl_vars['aConfig']->value['facebook_link']!=''){?>
+                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['aConfig']->value['facebook_link'];?>
+"><i class="fa fa-facebook"></i> </a> </li>
+                      <?php }?>
+                      <?php if ($_smarty_tpl->tpl_vars['aConfig']->value['twitter_link']!=''){?>
+                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['aConfig']->value['twitter_link'];?>
+"><i class="fa fa-twitter"></i> </a> </li>
+                      <?php }?>
+                      <?php if ($_smarty_tpl->tpl_vars['aConfig']->value['linkedin_link']!=''){?>
+                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['aConfig']->value['linkedin_link'];?>
+"><i class="fa fa-linkedin"></i> </a> </li>
+                      <?php }?>
+                      <?php if ($_smarty_tpl->tpl_vars['aConfig']->value['instagram_link']!=''){?>
+                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['aConfig']->value['instagram_link'];?>
+"><i class="fa fa-instagram"></i> </a> </li>
+                      <?php }?>
+                      <?php if ($_smarty_tpl->tpl_vars['aConfig']->value['mail_link']!=''){?>
+                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['aConfig']->value['mail_link'];?>
+"><i class="fa fa-envelope-o"></i> </a> </li>
+                      <?php }?>
                     </ul>
-                    <p class="whitecolor">&copy; 2018 DigiOne. Made With Love by themesindustry</p>
+                    <p class="whitecolor"><?php echo $_smarty_tpl->tpl_vars['aConfig']->value['copyright_en'];?>
+</p>
                 </div>
             </div>
         </div>
